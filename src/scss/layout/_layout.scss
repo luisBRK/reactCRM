@@ -1,0 +1,48 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.layout {
+  @include m.min_tablet {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    min-height: 100vh;
+  }
+}
+
+.left-bar {
+  background-color: v.$darkgray;
+  padding: 5rem 3rem;
+
+  &__title {
+    font-size: 3rem;
+    color: v.$white;
+  }
+
+  &__navbar {
+    margin-top: 5rem;
+
+    a {
+      display: block;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-radius: 5px;
+      text-align: center;
+      color: v.$white;
+      transition: .2s;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        background-color: v.$blue;
+        transform: translateX(1rem);
+      }
+    }
+  }
+
+}
+
+.dashboard {
+  background-color: v.$gray;
+}
