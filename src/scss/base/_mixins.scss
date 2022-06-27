@@ -43,6 +43,7 @@
   border-radius: 0.5rem;
   display: $display;
   padding: 1rem 2rem;
+  width: 100%;
   font-size: 1.6rem;
   font-weight: 700;
   text-align: center;
@@ -51,8 +52,9 @@
   transition: 0.2s;
 }
 
-@mixin button_input($textColor) {
-  border-radius: 1.7rem;
+@mixin input_button($textColor) {
+  border: none;
+  border-radius: .7rem;
   color: $textColor;
   font-size: 2rem;
   font-weight: 400;

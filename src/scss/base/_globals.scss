@@ -33,6 +33,24 @@ body {
   box-sizing: inherit;
 }
 
+.container-s {
+  width: 95%;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.container-m {
+  width: 95%;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.container {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
 a {
   text-decoration: none;
 }

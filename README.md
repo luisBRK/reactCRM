@@ -10,3 +10,8 @@
   - scss:
     - base: base folder
     - layout: contaner domain styles. (navbar, title, etc).
+
+- TOREAD:
+  - layout.jsx -> lienzo principal, sirve como marco ante los otros archivos para otras url.
+    - Newuser.jsx -> create new user
+      - NewUserForm.jsx -> data form para users.

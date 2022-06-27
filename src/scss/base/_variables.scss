@@ -1,6 +1,6 @@
 // Fuentes
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
-$fontPrincipal: "Lato",
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+$fontPrincipal: 'Roboto',
 sans-serif;
 
 // Size de Media Queries
@@ -12,5 +12,8 @@ $desktop: 1024px;
 $black: #1a1b1c;
 $white: #ffffff;
 $blue: #288cf0;
-$gray: #f4f4f4;
+$bluegray: #ebf2f5;
+$red: #db3333;
+$gray: #e5e5e5;
+$midgray: #a6a6a6;
 $darkgray: rgb(33, 34, 38);

@@ -1,16 +1,29 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 
 const Layout = () => {
+  const location = useLocation();
+  const currentUrl = location.pathname;
+
   return (
     <div className="layout">
       <div className="left-bar">
         {/* title */}
-        <h2 className="left-bar__title">Users CRM</h2>
+        <h1 className="left-bar__title">Users CRM</h1>
 
         {/* navbar */}
         <nav className="left-bar__navbar">
-          <a href="/users">Users</a>
-          <a href="/users/new">New user</a>
+          <Link
+            className={`${currentUrl === "/users" ? "link-selected" : ""}`}
+            to="/users"
+          >
+            Users
+          </Link>
+          <Link
+            className={`${currentUrl === "/users/new" ? "link-selected" : ""}`}
+            to="/users/new"
+          >
+            New user
+          </Link>
         </nav>
       </div>
 
