@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "userName": "juena",
+      "userCompany": "mi empresa .com",
+      "userEmail": "email@email.com",
+      "userPhone": "1231231231",
+      "userNotes": "me gusta el pollo",
+      "id": 1
+    },
+    {
+      "userName": "luis",
+      "userCompany": "mi empresa",
+      "userEmail": "luis@email.com",
+      "userPhone": "32646728",
+      "userNotes": "djajlkdj\n",
+      "id": 2
+    }
+  ]
+}

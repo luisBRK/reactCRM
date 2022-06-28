@@ -8,23 +8,38 @@ const NewUserForm = () => {
   const newUserSchema = Yup.object().shape({
     userName: Yup.string()
       .min(3, "User name is so short")
-      .max(45,"User name is so long")
+      .max(45, "User name is so long")
       .required("The user name is required"),
     userCompany: Yup.string().required("The company name is required"),
     userEmail: Yup.string()
       .email("Set a valid email")
       .required("You need to set an user email"),
-    userPhone: Yup.number("You need to set a valid number")
-      .max(1000000000)
+    userPhone: Yup.number()
+      .typeError("You need to set a valid number")
       .positive("You need to set a valid number")
       .integer("You need to set a valid number")
       .required("The user phone number is required"),
-    userNotes: Yup.string().required("The user notes are required"),
+    userNotes: Yup.string(),
   });
 
   // functions
-  const handleSubmit = (values) => {
-    console.log(values);
+  const handleSubmit = async (values) => {
+    try {
+      const url = "http://localhost:4000/users";
+
+      const answer = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(answer);
+      const result = await answer.json();
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const pressedButton = (event) => {
@@ -53,7 +68,9 @@ const NewUserForm = () => {
         validationSchema={newUserSchema}
       >
         {({ errors, touched }) => {
-          console.log(errors);
+          {
+            /* console.log(errors); */
+          }
           return (
             <Form>
               <div className="section">
@@ -162,7 +179,6 @@ const NewUserForm = () => {
                   type="submit"
                   value="Save user"
                   onClick={pressedButton}
-                  s
                 />
               </div>
             </Form>

@@ -12,9 +12,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/users" element={<Layout />}>
-          <Route index element={<Home></Home>} />
-          <Route path="new" element={<NewUser></NewUser>} />
-          <Route path="edit/:id" element={<EditUser></EditUser>} />
+          <Route index element={<Home />} />
+          <Route path="new" element={<NewUser />} />
+          <Route path="edit/:id" element={<EditUser />} />
         </Route>
       </Routes>
     </BrowserRouter>

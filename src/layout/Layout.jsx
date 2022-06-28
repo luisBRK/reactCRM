@@ -18,6 +18,7 @@ const Layout = () => {
           >
             Users
           </Link>
+
           <Link
             className={`${currentUrl === "/users/new" ? "link-selected" : ""}`}
             to="/users/new"
