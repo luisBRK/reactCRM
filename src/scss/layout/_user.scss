@@ -1,0 +1,23 @@
+@use "../base/variables"as v;
+
+.user {
+  border-radius: 10px;
+  background-color: v.$darkgray;
+  color: v.$white;
+  padding: 2rem 3rem;
+
+  &__title {
+    margin-bottom: 2rem;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    span {
+      // font-weight: 500;
+      color: v.$midgray;
+    }
+  }
+}

@@ -6,6 +6,7 @@ import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import NewUser from "./pages/NewUser";
 import EditUser from "./pages/EditUser";
+import ViewUser from "./pages/ViewUser";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="new" element={<NewUser />} />
           <Route path="edit/:id" element={<EditUser />} />
+          <Route path=":id" element={<ViewUser />} />
         </Route>
       </Routes>
     </BrowserRouter>

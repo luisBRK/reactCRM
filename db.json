@@ -13,8 +13,56 @@
       "userCompany": "mi empresa",
       "userEmail": "luis@email.com",
       "userPhone": "32646728",
-      "userNotes": "djajlkdj\n",
+      "userNotes": "no lo se tu dime",
       "id": 2
+    },
+    {
+      "userName": "PepeMalparido Ramo",
+      "userCompany": "PorkyStorys",
+      "userEmail": "pepe@email.com",
+      "userPhone": "32646728",
+      "userNotes": "me pica la kola",
+      "id": 3
+    },
+    {
+      "userName": "luis",
+      "userCompany": "mi empresa",
+      "userEmail": "pepe@email.com",
+      "userPhone": "32646728",
+      "userNotes": "me gusta la carne",
+      "id": 4
+    },
+    {
+      "userName": "MAria DB",
+      "userCompany": "SQL",
+      "userEmail": "maria@db.com",
+      "userPhone": "07634524322",
+      "userNotes": "le gustan mucho las bases de datos relacionales",
+      "id": 5
+    },
+    {
+      "userName": "leydi marisela",
+      "userCompany": "agrovet",
+      "userEmail": "fhslkfd@email.com",
+      "userPhone": "089847298",
+      "userNotes": "chola :)",
+      "id": 6
+    },
+    {
+      "userName": "oinky",
+      "userCompany": "porkys",
+      "userEmail": "myemail@email.com",
+      "userPhone": "12312323532",
+      "userNotes": "",
+      "id": 7
+    },
+    {
+      "userName": "PepeMalparido Ramo",
+      "userCompany": "mi empresa",
+      "userEmail": "pepe@email.com",
+      "userPhone": "12312323532",
+      "userNotes": "| #1 |  ->",
+      "id": 8
     }
   ]
 }

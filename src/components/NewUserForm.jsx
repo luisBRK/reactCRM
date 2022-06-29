@@ -1,10 +1,14 @@
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 import AlertError from "./AlertError";
 
 const NewUserForm = () => {
-  // schema
+  // navigate
+  const navigate = useNavigate();
+
+  // schema (validation)
   const newUserSchema = Yup.object().shape({
     userName: Yup.string()
       .min(3, "User name is so short")
@@ -34,9 +38,8 @@ const NewUserForm = () => {
           "Content-Type": "application/json",
         },
       });
-      console.log(answer);
+
       const result = await answer.json();
-      console.log(result);
     } catch (error) {
       console.log(error);
     }
@@ -62,8 +65,10 @@ const NewUserForm = () => {
           userPhone: "",
           userNotes: "",
         }}
-        onSubmit={(values) => {
-          handleSubmit(values);
+        onSubmit={async (values, { resetForm }) => {
+          await handleSubmit(values);
+          resetForm();
+          navigate("/users");
         }}
         validationSchema={newUserSchema}
       >
