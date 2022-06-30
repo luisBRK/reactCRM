@@ -13,15 +13,15 @@ const Layout = () => {
         {/* navbar */}
         <nav className="left-bar__navbar">
           <Link
-            className={`${currentUrl === "/users" ? "link-selected" : ""}`}
-            to="/users"
+            className={`${currentUrl === "/" ? "link-selected" : ""}`}
+            to="/"
           >
             Users
           </Link>
 
           <Link
-            className={`${currentUrl === "/users/new" ? "link-selected" : ""}`}
-            to="/users/new"
+            className={`${currentUrl === "/new" ? "link-selected" : ""}`}
+            to="/new"
           >
             New user
           </Link>

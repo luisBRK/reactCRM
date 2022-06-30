@@ -1,12 +1,20 @@
 {
   "users": [
     {
-      "userName": "luis b",
+      "userName": "luis berrezueta",
       "userCompany": "mi empresa",
       "userEmail": "pepe@email.com",
       "userPhone": "32646728",
       "userNotes": "dsadas",
       "id": 1
+    },
+    {
+      "userName": "lopez manuel",
+      "userCompany": "my company",
+      "userEmail": "email2@email.com",
+      "userPhone": "20874928734",
+      "userNotes": "xd",
+      "id": 2
     }
   ]
 }

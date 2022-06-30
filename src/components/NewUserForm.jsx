@@ -97,7 +97,7 @@ const NewUserForm = ({ user, charge }) => {
         onSubmit={async (values, { resetForm }) => {
           await handleSubmit(values);
           resetForm();
-          navigate("/users");
+          navigate("/");
         }}
         validationSchema={newUserSchema}
       >

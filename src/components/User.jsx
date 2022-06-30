@@ -28,7 +28,7 @@ const User = ({ user, handleDelete }) => {
         <button
           type="button"
           className="card-user-button"
-          onClick={() => navigate(`/users/${id}`)}
+          onClick={() => navigate(`/${id}`)}
         >
           <img src={seeIcon} alt="icon" />
         </button>
@@ -37,7 +37,7 @@ const User = ({ user, handleDelete }) => {
           type="button"
           className="card-user-button"
           onClick={() => {
-            navigate(`/users/edit/${id}`);
+            navigate(`/edit/${id}`);
           }}
         >
           <img src={editIcon} alt="icon" />
