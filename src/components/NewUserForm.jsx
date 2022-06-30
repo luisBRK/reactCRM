@@ -3,8 +3,11 @@ import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 
 import AlertError from "./AlertError";
+import Spinner from "./Spinner";
 
-const NewUserForm = () => {
+const NewUserForm = ({ user, charge }) => {
+  const { userName, userCompany, userEmail, userPhone, userNotes, id } = user;
+
   // navigate
   const navigate = useNavigate();
 
@@ -29,17 +32,36 @@ const NewUserForm = () => {
   // functions
   const handleSubmit = async (values) => {
     try {
-      const url = "http://localhost:4000/users";
+      let answer;
 
-      const answer = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify(values),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      // create new
+      if (Object.keys(user).length === 0) {
+        const url = "http://localhost:4000/users";
 
+        answer = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify(values),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      }
+
+      //edit
+      if (Object.keys(user).length !== 0) {
+        const url = `http://localhost:4000/users/${id}`;
+
+        answer = await fetch(url, {
+          method: "PUT",
+          body: JSON.stringify(values),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      }
+      console.log(answer);
       const result = await answer.json();
+      console.log(result);
     } catch (error) {
       console.log(error);
     }
@@ -53,18 +75,25 @@ const NewUserForm = () => {
     }, 100);
   };
 
-  return (
+  return charge ? (
+    <Spinner />
+  ) : (
     <div className="user-form container-m">
-      <h3 className="user-form__title">Add new User</h3>
+      <h3 className="user-form__title">
+        {Object.keys(user).length === 0
+          ? "Add new User"
+          : "Change user information"}
+      </h3>
 
       <Formik
         initialValues={{
-          userName: "",
-          userCompany: "",
-          userEmail: "",
-          userPhone: "",
-          userNotes: "",
+          userName: userName ?? "",
+          userCompany: userCompany ?? "",
+          userEmail: userEmail ?? "",
+          userPhone: userPhone ?? "",
+          userNotes: userNotes ?? "",
         }}
+        enableReinitialize={true}
         onSubmit={async (values, { resetForm }) => {
           await handleSubmit(values);
           resetForm();
@@ -182,7 +211,11 @@ const NewUserForm = () => {
                 <input
                   className="form-button"
                   type="submit"
-                  value="Save user"
+                  value={
+                    Object.keys(user).length === 0
+                      ? "Save user"
+                      : "Update values"
+                  }
                   onClick={pressedButton}
                 />
               </div>
@@ -193,5 +226,7 @@ const NewUserForm = () => {
     </div>
   );
 };
+
+NewUserForm.defaultProps = { user: {}, charge: false };
 
 export default NewUserForm;

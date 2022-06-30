@@ -51,10 +51,11 @@
 .dashboard {
   padding: 3rem 2rem;
   background-color: v.$gray;
+  height: 100%;
 
   @include m.min_tablet {
     height: 100vh;
-    overflow: scroll;
+    overflow-y: scroll;
   }
 
   &__title {

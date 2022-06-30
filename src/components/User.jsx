@@ -3,7 +3,7 @@ import seeIcon from "../icons/seeIcon.svg";
 import editIcon from "../icons/editIcon.svg";
 import deleteIcon from "../icons/deleteIcon.svg";
 
-const User = ({ user }) => {
+const User = ({ user, handleDelete }) => {
   const { userName, userCompany, userEmail, userPhone, userNotes, id } = user;
   const navigate = useNavigate();
 
@@ -32,10 +32,24 @@ const User = ({ user }) => {
         >
           <img src={seeIcon} alt="icon" />
         </button>
-        <button type="button" className="card-user-button">
+
+        <button
+          type="button"
+          className="card-user-button"
+          onClick={() => {
+            navigate(`/users/edit/${id}`);
+          }}
+        >
           <img src={editIcon} alt="icon" />
         </button>
-        <button type="button" className="card-user-button">
+
+        <button
+          type="button"
+          className="card-user-button"
+          onClick={() => {
+            handleDelete(id);
+          }}
+        >
           <img src={deleteIcon} alt="icon" />
         </button>
       </div>

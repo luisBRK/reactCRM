@@ -25,18 +25,18 @@ const ViewUser = () => {
 
       setTimeout(() => {
         setCharge(!charge);
-      }, 1000);
+      }, 500);
     };
     getUserAPI();
   }, []);
-
-  console.log(charge);
 
   const { userName, userCompany, userEmail, userPhone, userNotes } = user;
 
   return charge ? (
     <Spinner />
-  ) : Object.keys(user).length !== 0 ? (
+  ) : Object.keys(user).length === 0 ? (
+    <PageError />
+  ) : (
     <div className="user container-m">
       <h1 className="user__title">{userName}</h1>
 
@@ -67,8 +67,6 @@ const ViewUser = () => {
         </p>
       </div>
     </div>
-  ) : (
-    <PageError />
   );
 };
 

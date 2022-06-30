@@ -1,42 +1,7 @@
 @use "../base/variables"as v;
 @use "../base/mixins"as m;
 
-// .table {
-//   width: 100%;
-//   border-radius: 1rem;
 
-//   &__header {
-//     background-color: v.$blue;
-//     outline: none;
-//     border: none;
-//   }
-
-//   &__title {
-//     padding: 1rem;
-//     color: v.$white;
-//     outline: 1px solid v.$blue;
-//   }
-
-//   &__data {
-//     padding: 2rem;
-
-//     &-row {
-//       outline: solid 1px v.$midgray;
-//     }
-
-//     &-contact {
-//       p {
-//         padding: .5rem;
-//       }
-
-//       span {
-//         color: v.$darkgray;
-//         font-weight: 700;
-//       }
-
-//     }
-//   }
-// }
 .table {
 
   display: flex;
@@ -81,7 +46,7 @@
   @include m.min_tablet {
     grid-template-columns: repeat(4, 1fr);
     gap: 0;
-    padding: .5rem;
+    padding: 1.5rem .5rem;
   }
 
   &:hover {
