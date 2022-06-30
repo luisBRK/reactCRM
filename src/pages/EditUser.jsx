@@ -13,7 +13,7 @@ const EditUser = () => {
   useEffect(() => {
     const getUserAPI = async () => {
       try {
-        const url = `http://localhost:4000/users/${id}`;
+        const url = `${import.meta.env.VITE_API_URL}/${id}`;
 
         const answer = await fetch(url);
 

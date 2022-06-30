@@ -6,8 +6,8 @@ const Home = () => {
 
   useEffect(() => {
     const getUsersAPI = async () => {
+      const url = import.meta.env.VITE_API_URL;
       try {
-        const url = "http://localhost:4000/users";
         const answer = await fetch(url);
         const result = await answer.json();
 
@@ -22,7 +22,7 @@ const Home = () => {
 
   const confirmDelete = async (userId) => {
     try {
-      const url = `http://localhost:4000/users/${userId}`;
+      const url = `${import.meta.env.VITE_API_URL}/${userId}`;
 
       const answer = await fetch(url, {
         method: "DELETE",

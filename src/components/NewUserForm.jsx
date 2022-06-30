@@ -36,7 +36,7 @@ const NewUserForm = ({ user, charge }) => {
 
       // create new
       if (Object.keys(user).length === 0) {
-        const url = "http://localhost:4000/users";
+        const url = import.meta.env.VITE_API_URL;
 
         answer = await fetch(url, {
           method: "POST",
@@ -49,7 +49,7 @@ const NewUserForm = ({ user, charge }) => {
 
       //edit
       if (Object.keys(user).length !== 0) {
-        const url = `http://localhost:4000/users/${id}`;
+        const url = `${import.meta.env.VITE_API_URL}/${id}`;
 
         answer = await fetch(url, {
           method: "PUT",

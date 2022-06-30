@@ -11,9 +11,8 @@ const ViewUser = () => {
 
   useEffect(() => {
     const getUserAPI = async () => {
+      const url = `${import.meta.env.VITE_API_URL}/${id}`;
       try {
-        const url = `http://localhost:4000/users/${id}`;
-
         const answer = await fetch(url);
 
         const result = await answer.json();
